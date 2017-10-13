@@ -17,7 +17,7 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     // Unity Methods
     // Use this for initialization
     void Start () {
-        SetInitialReferences();	
+        SetInitialReferences();
 	}
 
     public void OnDrag(PointerEventData eventData)
@@ -29,7 +29,9 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
             // convertirla en rango de 0-1
             position.x = (position.x / backgroundImage.rectTransform.sizeDelta.x);
             position.y = (position.y / backgroundImage.rectTransform.sizeDelta.y);
-            inputVector = new Vector3(position.x * 2 - 1f, position.y * 2 - 1);             // esto se debe a los anchors de la imagen
+            float x = (backgroundImage.rectTransform.pivot.x == 1f) ? position.x * 2 + 1 : position.x * 2 - 1; // esto se debe a los anchors de la imagen
+            float y = (backgroundImage.rectTransform.pivot.y == 1f) ? position.y * 2 + 1 : position.y * 2 - 1;
+            inputVector = new Vector3(x, y);             
             inputVector = inputVector.magnitude > 1 ? inputVector.normalized : inputVector;
             //Debug.Log(inputVector);
             // mover el josytick
