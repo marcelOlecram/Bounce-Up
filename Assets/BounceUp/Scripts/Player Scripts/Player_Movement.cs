@@ -17,11 +17,6 @@ public class Player_Movement : MonoBehaviour {
     void Start () {
         SetInitialReferences();
     }
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
 
     void FixedUpdate()
     {
@@ -42,18 +37,6 @@ public class Player_Movement : MonoBehaviour {
         //myTransform = transform;
     }
 
-    /// <summary>
-    /// Incrementa la velocidad en base al gyroscopio del dispositivo
-    /// </summary>
-    void CheckRotationInput()
-    {
-        //Debug.DrawLine(myTransform.position, myTransform.forward,Color.red);
-        //Vector3 vel = new Vector3(-gyroscope.rotationRate.x * speed * Time.deltaTime, 0f, -gyroscope.rotationRate.y * speed * Time.deltaTime);        
-        Vector3 vel = new Vector3(gyroscope.rotationRate.y * speed * Time.deltaTime, 0f, -gyroscope.rotationRate.x * speed * Time.deltaTime);
-        //Vector3 vel = myTransform.TransformDirection(-gyroscope.rotationRate.y * speed * Time.deltaTime, 0f, -gyroscope.rotationRate.x * speed * Time.deltaTime);
-        myRigidbody.velocity += vel;
-    }
-
     void CheckJoystickInput()
     {
         Vector3 direction = new Vector3(virtualJoystickScript.GetJoystickPosition().x,0f, virtualJoystickScript.GetJoystickPosition().y);
@@ -64,4 +47,16 @@ public class Player_Movement : MonoBehaviour {
         //Debug.DrawLine(Camera.main.transform.position, velocidad*5,Color.red);
         myRigidbody.velocity += velocidad;
     }
+
+    ///// <summary>
+    ///// Incrementa la velocidad en base al gyroscopio del dispositivo
+    ///// </summary>
+    //void CheckRotationInput()
+    //{
+    //    //Debug.DrawLine(myTransform.position, myTransform.forward,Color.red);
+    //    //Vector3 vel = new Vector3(-gyroscope.rotationRate.x * speed * Time.deltaTime, 0f, -gyroscope.rotationRate.y * speed * Time.deltaTime);        
+    //    Vector3 vel = new Vector3(gyroscope.rotationRate.y * speed * Time.deltaTime, 0f, -gyroscope.rotationRate.x * speed * Time.deltaTime);
+    //    //Vector3 vel = myTransform.TransformDirection(-gyroscope.rotationRate.y * speed * Time.deltaTime, 0f, -gyroscope.rotationRate.x * speed * Time.deltaTime);
+    //    myRigidbody.velocity += vel;
+    //}
 }

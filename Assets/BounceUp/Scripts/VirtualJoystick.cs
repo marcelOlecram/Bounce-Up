@@ -60,7 +60,7 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     }
 
     /// <summary>
-    /// Pide la posicion del joystick. En un Vector3
+    /// Obtiene la posicion del joystick. En un Vector3
     /// </summary>
     /// <returns>Vector 3, almacenando en X y Y la posicion del joystick. </returns>
     public Vector3 GetJoystickPosition()
