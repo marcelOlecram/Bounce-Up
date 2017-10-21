@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BounceUp/Scenes/test01.unity
     guid: d067ad3c958e2574c89dbc617b0feb6c
+  - enabled: 1
+    path: Assets/BounceUp/Scenes/GameMangerTest.unity
+    guid: 992e5111b6bd8ef4396a9defefd93f62

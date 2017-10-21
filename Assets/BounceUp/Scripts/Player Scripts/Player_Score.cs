@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Player_Score : MonoBehaviour {
 
-    // public    
+    // public
+    public int lifes;
+    public int points;    
     public float yMax = 0f;
     // private
 

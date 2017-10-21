@@ -4,20 +4,33 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour {
 
-	// public
-	// private
+    // public
+    public int score;
+    // private
+    public GameManager gameManager;
 
-	// Unity Methods
-
+    // Unity Methods
+    void Start()
+    {
+        SetInitialReferences();
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // aumentar puntaje
-                // llamar a un manager
+            if(gameManager != null)
+            {
+                gameManager.IncreaseScore(score);
+            }
             // destruir Gameobject
             Destroy(gameObject);
         }
     }
 	// My Methods
+    void SetInitialReferences()
+    {
+        gameManager = GameManager.Instance;
+    }
+
+
 }

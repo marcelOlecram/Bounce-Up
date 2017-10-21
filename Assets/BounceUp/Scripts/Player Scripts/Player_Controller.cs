@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Movement : MonoBehaviour {
+/*Este Script controla todo lo referente al movimiento del jugador.*/
+public class Player_Controller : MonoBehaviour {
 
     // public
     public float speed;
@@ -10,12 +11,18 @@ public class Player_Movement : MonoBehaviour {
     // private
     private Gyroscope gyroscope;
     private Rigidbody myRigidbody;
+    private GameManager gameManager;
     //private Transform myTransform;
 
     // Unity Methods
+    void OnEnable()
+    {
+        SetInitialReferences();
+    }
+
     // Use this for initialization
     void Start () {
-        SetInitialReferences();
+        
     }
 
     void FixedUpdate()
@@ -28,6 +35,8 @@ public class Player_Movement : MonoBehaviour {
 
     void SetInitialReferences()
     {
+        // game manager
+        gameManager = GameManager.Instance;
         // gyroscopio
         gyroscope = Input.gyro;
         gyroscope.enabled = true;

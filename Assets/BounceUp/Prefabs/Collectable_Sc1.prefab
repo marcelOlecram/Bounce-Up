@@ -25,8 +25,8 @@ GameObject:
   - component: {fileID: 114981797258907552}
   - component: {fileID: 95420199520387148}
   m_Layer: 0
-  m_Name: Collectable
-  m_TagString: Untagged
+  m_Name: Collectable_Sc1
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,3 +125,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45d0db0ab6a8a614894ec2cdfcfbd96e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 1
+  gameManager: {fileID: 0}
