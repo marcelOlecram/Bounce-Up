@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
     [Header("Player Data")]
     public int playerLifes;
     public int playerScore;
-    public int playerHeigth;
+    public float playerHeigth;
     [Header("Game Data")]
     public bool isPause = false;
     public bool isGameOver = false;
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
     public GameManagerEventHandler EventContinueGame;   // llamarlo cuando el juego deje de estar en pausa
     public GameManagerEventHandler EventRestartGame;    // llamarlo cuando se desee reiniciar el nivel
     public GameManagerEventHandler EventGoToMenu;       // llamarlo cuando se desee ir al menu
-    public GameManagerEventHandler EventGameOver;       // llamarlo cuando se acaben las vidas  
+    public GameManagerEventHandler EventGameOver;       // llamarlo cuando se acaben las vidas
     #endregion Delegados
 
     // Unity Methods
@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour {
     {
         if(EventRestartGame != null)
         {
+            Time.timeScale = 1f;
             EventRestartGame();
         }
     }

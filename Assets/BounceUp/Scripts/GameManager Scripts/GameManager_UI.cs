@@ -7,6 +7,7 @@ public class GameManager_UI : MonoBehaviour {
     // public
     public GameObject canvasUIPause;
     public GameObject canvasUIGame;
+    public GameObject canvasUIGameOver;
     // private
     private GameManager gameManager;
 
@@ -16,11 +17,13 @@ public class GameManager_UI : MonoBehaviour {
         SetInitialReferences();
         gameManager.EventPauseGame += ShowUIPause;
         gameManager.EventContinueGame += HideUIPause;
+        gameManager.EventGameOver += ShowUIGameOver;
     }
     void OnDisable()
     {
         gameManager.EventPauseGame -= ShowUIPause;
         gameManager.EventContinueGame -= HideUIPause;
+        gameManager.EventGameOver -= ShowUIGameOver;
     }
 
 	// My Methods
@@ -39,5 +42,11 @@ public class GameManager_UI : MonoBehaviour {
     {
         canvasUIPause.SetActive(false);
         canvasUIGame.SetActive(true);
+    }
+
+    void ShowUIGameOver()
+    {
+        canvasUIGameOver.SetActive(true);
+        canvasUIGame.SetActive(false);
     }
 }

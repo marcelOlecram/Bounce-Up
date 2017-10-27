@@ -31,6 +31,4 @@ public class Collectable : MonoBehaviour {
     {
         gameManager = GameManager.Instance;
     }
-
-
 }
