@@ -7,10 +7,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     // public
+    /*
     [Header("Player Data")]
     public int playerLifes;
     public int playerScore;
     public float playerHeigth;
+    */
     [Header("Game Data")]
     public bool isPause = false;
     public bool isGameOver = false;
@@ -57,15 +59,6 @@ public class GameManager : MonoBehaviour {
             }
             return _instancia;
         }
-    }
-
-    /// <summary>
-    /// Incrementa el puntaje del jugador.
-    /// </summary>
-    /// <param name="points">Los puntos a incrementar.</param>
-    public void IncreaseScore(int points)
-    {
-        playerScore += points;
     }
 
     public void CallEventPauseGame()
