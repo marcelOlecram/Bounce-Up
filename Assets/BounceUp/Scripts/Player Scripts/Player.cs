@@ -10,6 +10,9 @@ public class Player : MonoBehaviour {
     public int playerScore;
     public float playerHeigth;
     // private
+    [Space(5)]
+    [SerializeField]
+    private GameManager gameManager;        // unir por inspector
 
 
     #region Delegados

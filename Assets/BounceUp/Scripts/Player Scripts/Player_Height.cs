@@ -72,4 +72,10 @@ public class Player_Height : MonoBehaviour {
     {
         maxHeightUI.text = playerMaxHeightUIText + maxHeight.ToString("F2");
     }
+
+    /// <summary>
+    /// Retorna la altura maxima actual
+    /// </summary>
+    /// <returns></returns>
+    public float GetMaxHeight() { return maxHeight; }
 }

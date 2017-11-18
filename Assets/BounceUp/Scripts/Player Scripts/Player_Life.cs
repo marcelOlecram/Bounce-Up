@@ -13,6 +13,7 @@ public class Player_Life : MonoBehaviour {
     private int playerLifes;
     private string playerLifeUIText = "V: ";
 
+
     // Unity Methods
     void OnEnable()
     {
@@ -55,11 +56,15 @@ public class Player_Life : MonoBehaviour {
     void LoseLife()
     {
         playerLifes--;
-        UpdateUI();
         // si las vidas ya son 0
         if (playerLifes<=0)
         {
             gameManager.CallEventGameOver();
+        }
+        else
+        {
+            UpdateUI();
+            gameManager.CallEventRestartGame();
         }
     }
 
