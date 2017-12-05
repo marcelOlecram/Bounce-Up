@@ -21,7 +21,7 @@ public class Camera_Follow : MonoBehaviour {
 	void Start () {
         SetInitialReferences();
 	}
-
+   
     void FixedUpdate()
     {
         CheckJoystickInput();
